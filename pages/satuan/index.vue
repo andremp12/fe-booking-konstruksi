@@ -89,6 +89,7 @@ export default defineComponent({
             await $api(`/satuan/${data.id}`,{
               onRequest(context:any):Promise<void>|void{
                 context.options.method = "DELETE"
+                context.options.headers = context.options.headers || {}
               }
             }).then((respon:any)=>{
               _self.toast.add({

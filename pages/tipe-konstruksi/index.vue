@@ -60,8 +60,6 @@ export default defineComponent({
       await $api('/tipe-konstruksi',{
         onRequest(context:any):Promise<void>|void{
           context.options.method="GET"
-          context.options.query={}
-          context.options.headers={}
         }
       }).then((result:any)=>{
         this.data = result.data

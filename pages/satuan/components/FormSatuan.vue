@@ -44,6 +44,7 @@ export default defineComponent({
         onRequest(context:any):Promise<void>|void{
           context.options.method = _self.mode == "edit" ? "PUT" : "POST"
           context.options.body = _self.state
+          context.options.headers = context.options.headers || {}
         }
       }).then((result:any)=>{
         console.log(result)
